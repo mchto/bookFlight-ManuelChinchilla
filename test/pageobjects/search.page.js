@@ -7,6 +7,10 @@ class SearchPage extends Page {
     /**
      * define selectors using getter methods
      */
+    //get passengersBtn () { return $('[data-test=PassengersField]').$('//button[@type="button"]')}
+    get passengersBtn () { return $('//div[@data-test="PassengersField"]//button[@type="button"]')}
+    get adultSumBtn () { return $('//div[@data-test="PassengersRow-adults"]//button[@aria-label="increment"]')}
+    get passengersConfirmBtn () { return $('[data-test=PassengersFieldFooter-done]')}
     get inputOrigen () { return $('[data-test=SearchPlaceField-origin]').$('[data-test=SearchField-input]') }
     get inputDestino () { return $('[data-test=SearchPlaceField-destination]').$('[data-test=SearchField-input]') }
     get inputSalida () { return $('//div[@class="Inputsstyled__Value-hexk8g-3 llFeJD"]')[0] }
@@ -22,12 +26,16 @@ class SearchPage extends Page {
      */
 
      explorar (origen, destino, salida, regreso) {
+        
         this.inputOrigen.setValue(origen);
         this.airportSalidaResult.click();
-        browser.setTimeout({'implicit': 15000});
         this.inputDestino.setValue(destino);
-        
+        browser.pause(3000);
         this.airportRegresoResult.click();
+        this.passengersBtn.click();
+        this.adultSumBtn.click();
+        this.passengersConfirmBtn.click();
+        browser.pause(10000);
         /*this.inputSalida.setValue(salida);
         this.inputRegreso.setValue(regreso);
         this.btnFechas.click();
