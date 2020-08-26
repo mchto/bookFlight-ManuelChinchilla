@@ -1,6 +1,6 @@
 var params = {'origen':'TXL',
               'destino':'LON',
-              'salida':'mar 01/09',
-              'regreso':'dom 20/09'};
+              'salida':'2020-11-09',
+              'regreso':'2020-11-14'};
 
 module.exports = params;
