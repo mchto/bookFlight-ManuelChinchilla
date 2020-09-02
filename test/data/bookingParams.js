@@ -1,6 +1,14 @@
 var params = {'origen':'TXL',
-              'destino':'LON',
-              'salida':'2020-11-09',
-              'regreso':'2020-11-14'};
+              'destino':'LON'};
 
-module.exports = params;
+var passengerInfo = {'email':'aaaa@aaaa.com',
+                     'phone':'123456',
+                     'name':'Carlos',
+                     'surname':'Perez',
+                     'birthDay':'01',
+                     'birthYear':'1990',
+                     'passport':'123456',
+                     'expirationDay':'01',
+                     'expirationYear':'2025'};
+
+module.exports = {params, passengerInfo};
